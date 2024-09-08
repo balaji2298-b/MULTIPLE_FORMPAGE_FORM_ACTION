@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</head>
+<style>
+	body{
+		background-color: lightgray;
+	}
+	form{
+        height: 220px;
+        width: 430px;
+        font-size: 20px;
+        margin: 50px auto;
+        padding: 10px 20px 30px;
+        text-align: left;
+        background-color: yellow;
+        border-radius: 20px;
+        margin-top: 100PX;
+    }
+    h1{
+       text-align: center;
+       color: red;
+    }
+    button{
+           width: 30%;
+           background-color: blue;
+           font-size: 20px;
+           color: white;
+           padding: 10px 10px;
+           border-radius: 18px;
+           border: 1px solid black;
+           box-shadow: 2px;
+           margin-left: 130px;
+           }
+	</style>
+<body>
+
+	<form>
+		<h1>Registration</h1>
+		<label for="registration-type">Select Registration Type:</label>
+		<br>
+		<select id="registration-type" style="width:100%;"class="form-control">
+			<option></option>
+			<option value="student">Student Registration</option>
+			<option value="staff">Staff Registration</option>
+            <option value="parents">Parents Registration</option>
+		</select>
+		<br>
+		<button>Submit</button>
+	</form>
+
+	<script>
+		const form = document.querySelector('form');
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const select = document.querySelector('#registration-type');
+			if (select.value === 'student') {
+				window.location.href = 'student';
+			}  if (select.value === 'staff') {
+				window.location.href = 'staff';
+			} else if (select.value === 'parents') {
+                window.location.href = 'parents';
+            }
+		});
+	</script>
+</body>
+</html>
